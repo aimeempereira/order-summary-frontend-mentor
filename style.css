@@ -1,0 +1,221 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3 {
+  line-height: 1;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip:rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+:root {
+  --clr-primary-pale-blue:hsl(225, 100%, 94%);
+  --clr-primary-bright-blue:hsl(245, 75%, 52%);
+
+  --clr-neutral-very-pale-blue:hsl(225, 100%, 98%);
+  --clr-neutral-muted-blue:hsl(224, 23%, 55%);
+  --clr-neutral-dark-blue:hsl(223, 47%, 23%);
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  background: var(--clr-primary-pale-blue) url(images/pattern-background-mobile.svg) no-repeat;
+  background-size: contain;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+h1 {
+  font-weight: 900;
+  font-size: 1.55rem;
+}
+
+h1, p {
+  text-align: center;
+  word-wrap: break-word;
+  padding: 0 .3rem;
+}
+
+
+p:nth-child(1), .change-plan, .button{
+  font-weight: 800;
+}
+
+h1, p:nth-child(1) {
+  color: var(--clr-neutral-dark-blue);
+}
+
+button:last-child {
+  color:var(--clr-neutral-muted-blue);
+}
+
+.order-text > p {
+  padding-top: 1.5rem;
+  color:var(--clr-neutral-muted-blue);
+  font-size: .95rem;
+}
+
+.card-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  width: 90vw;
+  max-width: 400px;
+  max-height: 700px;
+  background-color: white;
+  border-radius: 1.3rem;
+  overflow: hidden;
+  box-shadow: 0 20px 50px 20px hsla(245, 75%, 52%, .1);
+}
+
+.card-content {
+  padding:2.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.plan-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--clr-neutral-very-pale-blue);
+  border-radius: .8rem;
+}
+
+.plan-container {
+  font-size: .95rem;
+line-height: 1.3rem;}
+
+.plan-container > a {
+  font-size: .9rem;
+  color: var(--clr-primary-bright-blue);
+}
+
+.plan-music {
+  display: flex;
+  gap:1rem;
+  align-items: center;
+}
+
+.music-icon {
+  width: 48px;
+  height:48px;
+  background-image: url(images/icon-music.svg);
+
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.button {
+  border-style: none;
+  cursor: pointer;
+  padding:.7rem 0;
+  border-radius: .5rem;
+  font-size: .8rem;
+  transition: 1s;
+}
+
+button:first-child {
+  background: var(--clr-primary-bright-blue);
+  color: white;
+  
+}
+
+button:first-child:hover {
+  box-shadow: 2px 8px 10px 2px hsla(245, 75%, 52%, .35);
+  transition: 1s;
+}
+
+button:first-child:active {
+  background-color: hsl(245, 75%, 15%);
+}
+
+button:nth-child(2) {
+  background-color:transparent;
+  
+}
+
+button:nth-child(2):hover {
+  box-shadow: 2px 2px 8px 2px hsla(240, 2%, 9%, 0.15);
+  transition: 40ms;
+}
+
+button:nth-child(2):active {
+  background-color: var(--clr-neutral-very-pale-blue);
+}
+
+@media (min-width:975px) {
+  body {
+    background: var(--clr-primary-pale-blue) url(images/pattern-background-desktop.svg) no-repeat;
+  background-size: contain;
+  }
+}
